@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#-------------------------------------
+#@title      Task1_file_handling.sh
+#@author     Enoch Tetteh Sackey
+#index       7363023
+#@school     Kwame Nkrumah University of Science and Technology (knust)
+#@description Demonstrates target directory creation, file creation, and appending.
+#@date       2026-09-10
+#-------------------------------------
+
+#Display usage instructions
+usage() {
+    echo "Usage: $0 <target_directory>"
+    echo " <target_directory> : Directory to create and manage files in."
