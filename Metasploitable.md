@@ -3,7 +3,7 @@
 **Name:** <Enoch Tetteh Sackey>
 **Index Number:** <7363023>
 **Date:** <21-09-2026>
-**Target IP:** <Metasploitable2 IP>
+**Target IP:** <10.10.10.0 IP>
 **Attacker OS / Tools:** <e.g. Kali Linux 2026.x, Metasploit Framework x.x, nmap x.x>
 
 ---
