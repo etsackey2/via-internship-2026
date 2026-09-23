@@ -1,14 +1,59 @@
 #!/usr/bin/env bash
-#-------------------------------------
-#@title      Task1_file_handling.sh
-#@author     Enoch Tetteh Sackey
-#index       7363023
-#@school     Kwame Nkrumah University of Science and Technology (knust)
-#@description Demonstrates target directory creation, file creation, and appending.
-#@date       2026-09-10
-#-------------------------------------
+# --------------------------------------------------
+# @title       Task1_file_handling.sh
+# @author      Enoch Tetteh Sackey
+# @index       <7363023>
+# @school      Kwame Nkrumah University of Science and Technology (KNUST)
+# @description Demonstrates file/directory checks, creation, and appending.
+# @date        2026-09-14
+# --------------------------------------------------
 
-#Display usage instructions
 usage() {
     echo "Usage: $0 <target_directory>"
-    echo " <target_directory> : Directory to create and manage files in."
+    echo "  <target_directory> Path where files will be created."
+    exit 1
+}
+
+# Display help if requested
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    usage
+fi
+
+# Ensure target directory parameter is passed
+if [ -z "$1" ]; then
+    echo "Error: Target directory path is missing." >&2
+    usage
+fi
+
+TARGET_DIR="$1"
+FILE_PATH="$TARGET_DIR/sample_output.txt"
+
+# 1. Create directory if missing and report status
+if [ -d "$TARGET_DIR" ]; then
+    echo "Directory '$TARGET_DIR' already exists."
+else
+    mkdir -p "$TARGET_DIR"
+    if [ $? -ne 0 ]; then
+        echo "Error: Failed to create directory '$TARGET_DIR'." >&2
+        exit 1
+    fi
+    echo "Directory '$TARGET_DIR' created successfully."
+fi
+
+# 2. Write initial content to file
+echo "Initial content: Created on $(date)" > "$FILE_PATH"
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to write to file '$FILE_PATH'." >&2
+    exit 1
+fi
+echo "Successfully wrote initial content to '$FILE_PATH'."
+
+# 3. Append additional content
+echo "Appended log entry on $(date)" >> "$FILE_PATH"
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to append content to '$FILE_PATH'." >&2
+    exit 1
+fi
+echo "Successfully appended content to '$FILE_PATH'."
+
+exit 0
