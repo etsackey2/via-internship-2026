@@ -1,8 +1,8 @@
 # via internship 2026
-# @author       <Enoch Tetteh Sackey>
-# @index        <7363023>
-# @school       Kwame Nkrumah University of Science and Technology (KNUST)
-# @description  <One or two lines on what this script does>
+#  <Enoch Tetteh Sackey
+#  <7363023>
+#  Kwame Nkrumah University of Science and Technology (KNUST)
+#  <One or two lines on what this script does>
 
 ## Directory Overview
 # Bash_prog/: Bash scripts covering tasks 1 through 5.
